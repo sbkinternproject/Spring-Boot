@@ -43,4 +43,13 @@ public class ToDoExpenseController {
         // System.out.println("The Id we are getting is "+id);
         return new ResponseEntity<ToDoExpense>(toDoExpenseService.getToDoExpenseById(id), HttpStatus.OK);
     }
+    @GetMapping("/deleteById/{id}")
+    public ResponseEntity<Boolean> deleteExpenseById(@PathVariable("id") Long id){
+        // System.out.println("The Id we are getting is "+id);
+        return new ResponseEntity<Boolean>(toDoExpenseService.deleteToDoExpenseById(id), HttpStatus.OK);
+    }
+    @PostMapping("/updateById/{id}")
+    public ResponseEntity<ToDoExpense> updateExpenseById(@PathVariable("id") Long id, @RequestBody ToDoExpense toDoExpense){
+        return new ResponseEntity<ToDoExpense>(toDoExpenseService.updateToDoExpenseById(id, toDoExpense), HttpStatus.OK);
+    }
 }
