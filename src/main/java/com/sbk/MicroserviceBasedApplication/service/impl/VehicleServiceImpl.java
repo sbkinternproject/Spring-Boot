@@ -38,6 +38,7 @@ public class VehicleServiceImpl implements VehicleService{
     @Override
     public Vehicle updateVehicleById(long id, Vehicle vehicle) {
         // TODO Auto-generated method stub
+        vehicle.setVehicle_id(id);
         return vehicleRepository.save(vehicle);
     }
 
