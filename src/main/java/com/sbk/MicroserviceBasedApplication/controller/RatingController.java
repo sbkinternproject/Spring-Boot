@@ -49,6 +49,19 @@ public class RatingController {
     public ResponseEntity<Rating> updateExpenseById(@PathVariable("id") Long id, @RequestBody Rating Rating){
         return new ResponseEntity<Rating>(ratingService.updateRatingById(id, Rating), HttpStatus.OK);
     }
+    @GetMapping("/getAllRatingByDishId/{dish_id}")
+    public ResponseEntity<List<Rating>> getAllRatingByDishId(@PathVariable("dish_id") long dish_id){
+        return new ResponseEntity<List<Rating>>(ratingService.getAllRatingByDishId(dish_id), HttpStatus.OK);
+    }
+    @GetMapping("/getAllRatingByResturantId/{resturant_id}")
+    public ResponseEntity<List<Rating>> getAllRatingByResturantId(@PathVariable("resturant_id") long resturant_id){
+        return new ResponseEntity<List<Rating>>(ratingService.getAllRatingByResturantId(resturant_id), HttpStatus.OK);
+    }
+    @GetMapping("/getAllRatingByUserId/{user_id}")
+    public ResponseEntity<List<Rating>> getAllRatingByUserId(@PathVariable("user_id") String user_id){
+        return new ResponseEntity<List<Rating>>(ratingService.getAllRatingByUserId(user_id), HttpStatus.OK);
+    }
+
 
 }
 

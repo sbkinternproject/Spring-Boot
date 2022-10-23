@@ -55,19 +55,19 @@ public class RatingServiceImpl implements RatingService{
     @Override
     public List<Rating> getAllRatingByDishId(long dish_id) {
         // TODO Auto-generated method stub
-        return null;
+        return ratingRepository.findAllRatingByDishId(dish_id);
     }
 
     @Override
     public List<Rating> getAllRatingByResturantId(long resturant_id) {
         // TODO Auto-generated method stub
-        return null;
+        return ratingRepository.findAllRatingByResturantId(resturant_id);
     }
 
     @Override
     public List<Rating> getAllRatingByUserId(String user_id) {
         // TODO Auto-generated method stub
-        return null;
+        return ratingRepository.findAllRatingByUserId(user_id);
     }
     
 }
