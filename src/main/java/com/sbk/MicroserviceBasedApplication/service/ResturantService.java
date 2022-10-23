@@ -10,5 +10,5 @@ public interface ResturantService {
     public Resturant getResturantById(long id);
     public Resturant updateResturantById(long id, Resturant resturant);
     public boolean deleteResturantById(long id);
-    public List<Resturant> getResturantsByRating(int min, int max);
+    public List<Resturant> getResturantsByRating(double min, double max);
 }

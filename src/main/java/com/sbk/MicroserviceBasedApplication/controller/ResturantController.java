@@ -48,5 +48,8 @@ public class ResturantController {
     public ResponseEntity<Resturant> updateExpenseById(@PathVariable("id") Long id, @RequestBody Resturant Resturant){
         return new ResponseEntity<Resturant>(resturantService.updateResturantById(id, Resturant), HttpStatus.OK);
     }
-
+    @GetMapping("/getResturantsByRating/{min}/{max}")
+    public ResponseEntity<List<Resturant>> getResturantsByRating(@PathVariable("min") double min, @PathVariable("max") double max ){
+        return new ResponseEntity<List<Resturant>>(resturantService.getResturantsByRating(min, max), HttpStatus.OK);
+    }
 }

@@ -53,9 +53,9 @@ public class ResturantServiceImpl implements ResturantService{
     }
 
     @Override
-    public List<Resturant> getResturantsByRating(int min, int max) {
+    public List<Resturant> getResturantsByRating(double min, double max) {
         // TODO Auto-generated method stub
-        return null;
+        return resturantRepository.findAllResturantByRating(min, max);
     }
     
 }
