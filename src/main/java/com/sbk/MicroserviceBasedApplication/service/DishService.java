@@ -13,8 +13,8 @@ public interface DishService {
 
     public List<Dish> getAllDishByCategory(String category);
 
-    public List<Dish> getAllDishByPrice(int min, int max);
-    public List<Dish> getAllDishByRating(int min, int max);
+    public List<Dish> getAllDishByPrice(double min, double max);
+    public List<Dish> getAllDishByRating(double min, double max);
 
 }
 

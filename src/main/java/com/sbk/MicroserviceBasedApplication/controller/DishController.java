@@ -50,4 +50,17 @@ public class DishController {
         return new ResponseEntity<Dish>(dishService.updateDishById(id, Dish), HttpStatus.OK);
     }
 
+    @GetMapping("/getAllDishByCategory/{category}")
+    public ResponseEntity<List<Dish>> getAllDishByCategory(@PathVariable("category") String category){
+        return new ResponseEntity<List<Dish>>(dishService.getAllDishByCategory(category), HttpStatus.OK);
+    }
+    @GetMapping("/getAllDishByPrice/{min}/{max}")
+    public ResponseEntity<List<Dish>> getAllDishByPrice(@PathVariable("min") double min, @PathVariable("max") double max){
+        return new ResponseEntity<List<Dish>>(dishService.getAllDishByPrice(min, max), HttpStatus.OK);
+    }
+    @GetMapping("/getAllDishByRating/{min}/{max}")
+    public ResponseEntity<List<Dish>> getAllDishByRating(@PathVariable("min") double min, @PathVariable("max") double max){
+        return new ResponseEntity<List<Dish>>(dishService.getAllDishByRating(min, max), HttpStatus.OK);
+    }
+
 }

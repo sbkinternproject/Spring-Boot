@@ -55,19 +55,19 @@ public class DishServiceImpl  implements DishService{
     @Override
     public List<Dish> getAllDishByCategory(String category) {
         // TODO Auto-generated method stub
-        return null;
+        return dishRepository.findAllDishByCategory(category);
     }
 
     @Override
-    public List<Dish> getAllDishByPrice(int min, int max) {
+    public List<Dish> getAllDishByPrice(double min, double max) {
         // TODO Auto-generated method stub
-        return null;
+        return dishRepository.findAllDishByPrice(min, max);
     }
 
     @Override
-    public List<Dish> getAllDishByRating(int min, int max) {
+    public List<Dish> getAllDishByRating(double min, double max) {
         // TODO Auto-generated method stub
-        return null;
+        return dishRepository.findAllDishByRating(min, max);
     }
     
 }

@@ -40,10 +40,18 @@ public class Dish {
     private long resturant_id;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish_id")
     private List<Rating> ratings;
+    @Column(name = "rating")
+    private double rating;
+    public double getRating() {
+        return rating;
+    }
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
     public Dish() {
     }
     public Dish(long id, String name, String description, Double price, String category, long resturant_id,
-            List<Rating> ratings) {
+            List<Rating> ratings, int rating) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -51,6 +59,7 @@ public class Dish {
         this.category = category;
         this.resturant_id = resturant_id;
         this.ratings = ratings;
+        this.rating = rating;
     }
     public long getId() {
         return id;
